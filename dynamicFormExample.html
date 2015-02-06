@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .form-group
+  {
+    display: none;
+  }
+
+  </style>
+  </head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <form>
+          <div class="form-group" id="firstSelection">
+            <select class="form-control" id="firstDrop">
+              <option value="#">Make a Selecetion</option>
+              <option value="true">true</option>
+              <option value="false">false</option>
+            </select>
+          </div>
+
+          <div class="form-group basic">
+          <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" class="form-control" />
+          </div>
+
+          <div class="form-group basic">
+          <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="10" type="text" class="form-control" />
+          </div>
+
+          <div class="form-group">
+          <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" class="form-control" />
+          </div>
+
+          <div class="form-group">
+          <label for="phone">Phone (no spaces or dashes)</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" class="form-control" />
+          </div>
+
+          <div class="form-group">
+          <label for="zip">Zip Code</label><input  id="zip" maxlength="20" name="zip" size="20" type="text" class="form-control" />
+          </div>
+
+          <!--<div class="form-group">
+            <select class="form-control">
+              <option value="#">Make a Selecetion</option>
+              <option value="true">true</option>
+              <option value="false">false</option>
+            </select>
+          </div>-->
+
+          <input type="hidden" id="lead_source" name="lead_source" value="Web">
+
+          <div class="form-group">
+          <label for="description">Message</label><textarea name="description" class="form-control"></textarea></div>
+
+          <input type="submit" name="submit" class="btn btn-primary">
+          </div>
+
+        </form>
+      </div> <!-- Close col-lg-6  -->
+    </div> <!-- Close Row -->
+  </div> <!-- Close Container -->
+
+
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    var arrRecordType = ["Access Issue", "Branch Info Change"];
+    var arrBranchInfo = ["Address Change", "Roll-ups Change"];
+
+    $('#firstSelection').show();
+
+    $('#firstDrop').change(function () {
+      if ($(this).val() == "true") {
+        $('.form-group').show();
+      }
+        else {
+          $('.basic').hide();    
+        }
+      })
+  });
+  </script>
+</body>
+</html>
